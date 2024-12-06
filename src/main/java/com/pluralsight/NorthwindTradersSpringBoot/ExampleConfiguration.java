@@ -6,6 +6,11 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class ExampleConfiguration {
 
+    @Bean
+    public ExampleBean secondExampleBean() {
+        return new ExampleBean("example");
+    }
+
 
     @Bean
     public String stringBean() {
