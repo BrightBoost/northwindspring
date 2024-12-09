@@ -1,17 +1,15 @@
 package com.pluralsight.NorthwindTradersSpringBoot;
 
-import org.springframework.stereotype.Component;
-
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
 public class SimpleProductDao implements ProductDao {
     private List<Product> products = new ArrayList<>();
 
     @Override
-    public void add(Product product) {
+    public boolean add(Product product) {
         products.add(product);
+        return false;
     }
 
     @Override

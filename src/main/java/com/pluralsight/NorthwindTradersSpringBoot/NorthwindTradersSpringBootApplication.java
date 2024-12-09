@@ -10,9 +10,9 @@ import java.util.Scanner;
 public class NorthwindTradersSpringBootApplication {
 	public static void main(String[] args) {
 		ApplicationContext ac = SpringApplication.run(NorthwindTradersSpringBootApplication.class, args);
-		for(String name : ac.getBeanDefinitionNames()) {
-			System.out.println(name);
-		}
+		JdbcProductDao jdbcProductDao = ac.getBean(JdbcProductDao.class);
+		jdbcProductDao.add(new Product(10000, "pen", "2", 4.00));
+		System.out.println(jdbcProductDao.getAll());
 
 	}
 
